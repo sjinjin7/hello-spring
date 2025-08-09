@@ -6,10 +6,14 @@ import hello.hello_spring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+//ctrl shift t 와함께 클래스 이름을 누르면 테스트 클래스 만들 수 있음
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*
      회원가입
